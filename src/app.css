@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,4 +22,33 @@ time, mark, audio, video {
 }
 ol, ul {
 	list-style: none;
+}
+
+header {
+	background-color: #4990E2;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: #fff;
+	font-weight: bold;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 20px;
+	height: 64px;
+	padding: 0 42px;
+	align-items: center;
+}
+
+header div.perfil-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+header div.perfil-container i{
+	margin-left: 10px;
+}
+
+
+header img{
+	height: 24px;
 }
