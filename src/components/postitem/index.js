@@ -1,43 +1,40 @@
 import React from 'react';
-import Vader from '../../assets/Darth.jpg'
-import Sidios from '../../assets/sidios.jpeg'
 
-
-
- function PostHeader() {
+ function PostHeader({author,date}) {
   return (
     <div className="post-header">
-      <img className="avatar" src={Vader} />
+      <img className="avatar" src={author.avatar} />
       <div className="details">
-        <span>Darth Vader Silva dos Santos</span>
-        <span>08/05</span>
+        <span>{author.name}</span>
+        <span>{date}</span>
       </div>
     </div>
     );
 }
 
- function PostComments() {
+ function PostComments({comments}) {
   return (
     <div className="post-comments">
       <div className="divider" />
-      
-        <div className="comment">
-          <img className="avatar" src={Sidios} />
+       {comments.map(comment=>( 
+       <div key={comment.id} className="comment">
+          <img className="avatar" src={comment.author.avatar} />
           <p>
-            <span>sidios</span>
-            vamo matar o luke quando?
+            <span>{comment.author.name}</span>
+            {comment.content}
           </p>
         </div>
+          ))}
     </div>
   );
 }
 
 
-export default function PostItem() {
+export default function PostItem({author,date, content, comments}) {
   return (
     <div className="post">
-      <PostHeader />
-      <p className="post-content">um comentario qualquer ai</p>
-      <PostComments  />
+      <PostHeader author={author} date={date}/>
+  <p className="post-content">{content}</p>
+      <PostComments comments={comments} />
     </div>  );
 }
